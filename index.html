@@ -1,0 +1,91 @@
+<!--    * -->
+<!--   *** -->
+<!--  ***** -->
+<!-- ******* -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>輸入聖誕樹的高度，然後用*組合出來</title>
+</head>
+
+<body>
+    <label for="">請輸入高度:</label>
+    <input type="text" name="" id="Tree_hei">
+    <button onclick="show()">ENTER</button>
+    <p id="demo"></p>
+    <script>
+        //TEST1========================================================================================
+        function show() {
+            var star = document.getElementById('Tree_hei').value;
+            var result = "";
+            for (x = 0; x < star; x++) {
+                for (y = star * 2 - 1; y > x; y--) {
+                    // document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"&emsp;";
+                    result = result + "&emsp;";
+                }
+                for (z = 0; z <= x; z++) {
+                    // document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"＊";
+                    result = result + "＊";
+                }
+                for (z = 0; z < x; z++) {
+                    // document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"＊";
+                    result = result + "＊";
+                }
+                // document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"<br>";
+                result = result + "<br>" + "<br>";
+                document.getElementById("demo").innerHTML = result;
+                
+            }
+        }
+
+        //TEST2=======================================================================================
+        // function show() {
+        //     var i = 0;
+        //     var h = document.getElementById('Tree_hei').value;
+        //     var result = "";
+        //     for (x = 0; x < h; x++) {
+        //         for (y = (h - 1); y > x; y--) {
+        //             result = result + "&emsp;";
+        //         }
+        //         for (z = 0; z <= i; z++) {
+        //             result = result + "＊";
+        //         }
+        //         result = result + "<br>";
+        //         i += 2;
+        //         document.getElementById("demo").innerHTML = result;
+        //     }
+        // }
+
+        //TEST3============================================================================================
+        // function show() {
+        //     var h = document.getElementById('Tree_hei').value;
+        //     var result = "";
+        //     for (x = 0; x < h; x++) {
+        //         for (y = 0; y < h - x - 1; y++) {
+        //             result = result + "&emsp;";
+        //         }
+        //         for (y = 0; y < x * 2 + 1; y++) {
+        //             result = result + "＊";
+        //         }
+        //         result = result + "<br>";
+
+        //         document.getElementById("demo").innerHTML = result;
+        //     }
+        // }
+        // ※ 注意要用全形的＊和全形的空白 ＆emsp ※
+
+        // 分解動作
+        // 1. 觀察列和星星數量的變化: 星星數量 = 最終列 + 最終列 - 1
+        //    1＝>1、2=>3、3=>5、4=>7、5=>9
+        // 2. 觀察列和空白數量的變化: 假設以四列舉例
+        //    第一列：1=>3、5=>7
+        //    第二列：1=>2、6=>7
+        //    第三列：1=>1、7=>7
+        //    第四列：
+        // 3. 觀察星星中間位置: 中間位置 = 最終列
+    </script>
+</body>
+
+</html>
